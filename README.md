@@ -12,6 +12,7 @@
 
 ```
 $ git clone [url]
+$ cd  Team203
 $ git remote add origin [url]
 $ git pull origin master
 ```
@@ -31,7 +32,13 @@ $ git commit -m "message"
 $ git push origin [branchname]
 ```
 
+分支合并（阶段性任务完成后）
 
+```
+$ git checkout master
+$ git merge [branchname]
+$ git push origin master
+```
 
 
 
