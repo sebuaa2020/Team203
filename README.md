@@ -36,6 +36,7 @@ $ git push origin [branchname]
 
 ```
 $ git checkout master
+$ git pull
 $ git merge [branchname]
 $ git push origin master
 ```
