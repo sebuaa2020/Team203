@@ -14,7 +14,7 @@
 
    ```
    $ source ./devel/setup.bash
-   $ roslauch wpr_simulation wpb_rviz.launch
+   $ roslaunch wpr_simulation wpb_rviz.launch
    ```
 
    **PS：以上两步为仿真必备工作**
