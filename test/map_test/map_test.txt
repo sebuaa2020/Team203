@@ -1,0 +1,29 @@
+地图建立模块测试说明
+
+雷达检测分支
+测试地图：warehouse.world
+测试过程：
+1.在gazebo启动ros机器人仿真
+2.运行lidar_test雷达测试脚本，观察控制台信息	 
+3.启动rviz，观察地图中是否有红色扫描点
+4.退出
+
+SLAM建图分支
+测试地图：navigation.world / warehouse.world
+建图算法：hector_mapping / gmapping
+测试过程：
+1.在gazebo启动ros机器人仿真，仿真地图分别选择 navigation.world 和 warehouse.world
+2.运行SLAM建图算法，分别选择 hector_mapping 和 gmapping
+3.运行移动控制脚本，使机器人绕地图移动一周
+4.观察rviz中雷达检测点框架和控制台是否报错
+5.退出
+
+地图保存分支
+测试地图：warehouse.world
+建图算法：hector_mapping
+测试过程：
+1.延续上述流程，执行map_server地图保存指令
+2.打开保存路径对应的map.pgm，观察图片与实际地图结构是否对应
+3.退出
+
+
