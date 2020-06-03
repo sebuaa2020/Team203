@@ -40,6 +40,8 @@
 
 新地图地图建立和自主巡航测试完成	**PS：**运行 **nav.launch** 文件时，将 **wpr_simulation/nav.launch** 文件替换 **~/catkin_ws/src/wpb_home/wpb_home_tutorials/launch/nav.launch**，解决初始位置不断跳动问题 - 2020.05.26 00:16
 
+导航模块引入避障功能	- 2020.06.03 19:40
+
 ------
 
 ### 下一步计划
