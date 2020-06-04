@@ -1,3 +1,4 @@
+#coding=utf-8
 class AuthenticationIllegalException(Exception):
     def __init__(self):
         pass

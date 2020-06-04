@@ -1,7 +1,8 @@
+#coding=utf-8
 import tkinter as tk
 import tkinter.messagebox
-from code.login_parse import is_authenticated, is_registered, register
-from code.exceptions import *
+from login_parse import is_authenticated, is_registered, register
+from exceptions import *
 
 
 class Application(tk.Tk):
@@ -127,8 +128,12 @@ class PageHome(tk.Frame):
         page_label.grid(row=0, column=3)
 
         button1 = tk.Button(self, text="注销", command=lambda: master.show_frame(PageLogin)).grid(row=0, column=7)
+
+			
         button2 = tk.Button(self, text="地图建立", command=lambda: master.show_frame(PageMapCreate)).grid(row=5, column=3)
 
+	
+		button3 = tk.Button(self, text="注销", command=lambda: master.show_frame(PageLogin)).grid(row=0, column=7)
 
 class PageMapCreate(tk.Frame):
     def __init__(self, master):

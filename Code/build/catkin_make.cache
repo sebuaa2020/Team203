@@ -1,0 +1,2 @@
+map:robot_arm:rplidar_ros:waterplus_map_tools:wpb_home/wpb_home_behaviors:wpb_home/wpb_home_bringup:wpb_home/wpb_home_remote:wpb_home/wpb_home_tutorials:wpb_home/wpbh_local_planner:wpr_simulation:xfyun_waterplus
+-DCATKIN_DEVEL_PREFIX=/home/watsonyang/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/watsonyang/catkin_ws/install -G Unix Makefiles

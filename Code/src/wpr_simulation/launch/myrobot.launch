@@ -1,0 +1,29 @@
+<launch>
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find wpr_simulation)/worlds/warehouse.world"/>
+    <arg name="debug" value="false" />
+    <arg name="gui" value="true" />
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="recording" value="false"/>
+  </include>
+
+  <!-- Spawn the objects into Gazebo -->
+  <node name="sofa" pkg="gazebo_ros" type="spawn_model" args="-file $(find wpr_simulation)/urdf/sofa.gazebo -x -1.9 -y -0.1 -z 0 -Y 1.57 -urdf -model sofa" />
+  <node name="tea_table" pkg="gazebo_ros" type="spawn_model" args="-file $(find wpr_simulation)/urdf/tea_table.gazebo -x -3 -y 1.8 -z 0 -Y 1.57 -urdf -model tea_table" />
+  <node name="dinning_table_0" pkg="gazebo_ros" type="spawn_model" args="-file $(find wpr_simulation)/urdf/table.gazebo -x 0 -y 1 -z 0 -Y 0 -urdf -model dinning_table_0" />
+  <node name="dinning_table_1" pkg="gazebo_ros" type="spawn_model" args="-file $(find wpr_simulation)/urdf/table.gazebo -x 0 -y 2.2 -z 0 -Y 0 -urdf -model dinning_table_1" />
+  <node name="dinning_table_2" pkg="gazebo_ros" type="spawn_model" args="-file $(find wpr_simulation)/urdf/table.gazebo -x 0.5 -y 1 -z 0 -Y 0 -urdf -model dinning_table_2" />
+  <node name="dinning_table_3" pkg="gazebo_ros" type="spawn_model" args="-file $(find wpr_simulation)/urdf/table.gazebo -x 0.5 -y 2.2 -z 0 -Y 0 -urdf -model dinning_table_3" />
+
+  <node name="dinning_table_4" pkg="gazebo_ros" type="spawn_model" args="-file $(find wpr_simulation)/urdf/table.gazebo -x 2 -y 1 -z 0 -Y 0 -urdf -model dinning_table_4" />
+  <node name="dinning_table_5" pkg="gazebo_ros" type="spawn_model" args="-file $(find wpr_simulation)/urdf/table.gazebo -x 2 -y 2.2 -z 0 -Y 0 -urdf -model dinning_table_5" />
+  <node name="dinning_table_6" pkg="gazebo_ros" type="spawn_model" args="-file $(find wpr_simulation)/urdf/table.gazebo -x 2.5 -y 1 -z 0 -Y 0 -urdf -model dinning_table_6" />
+  <node name="dinning_table_7" pkg="gazebo_ros" type="spawn_model" args="-file $(find wpr_simulation)/urdf/table.gazebo -x 2.5 -y 2.2 -z 0 -Y 0 -urdf -model dinning_table_7" />
+
+  <!-- Spawn a robot into Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find wpr_simulation)/urdf/wpb_home.gazebo -x -2 -y -3.5 -z 0 -Y 3.14 -urdf -model wpb_home"/>
+
+</launch>

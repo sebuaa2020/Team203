@@ -1,0 +1,8 @@
+prefix=/home/watsonyang/Team203_1/code/devel
+
+Name: xfyun_waterplus
+Description: Description of xfyun_waterplus
+Version: 0.0.0
+Cflags: -I/home/watsonyang/Team203_1/code/devel/include -I/home/watsonyang/Team203_1/code/src/xfyun_waterplus/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime
