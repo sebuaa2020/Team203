@@ -1,10 +1,7 @@
-<<<<<<< HEAD:ROS_GUI/code/login_parse.py
 import numpy as np
-from exceptions import *
-=======
 
 from ROS_GUI.code.exceptions import *
->>>>>>> a33da7dcb497d95c41f0bbb497f00bdeba770694:code/ROS_GUI/code/login_parse.py
+
 
 parsed = False
 brochure = dict()

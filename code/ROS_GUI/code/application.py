@@ -1,15 +1,12 @@
 #coding=utf-8
 import tkinter as tk
 import tkinter.messagebox
-<<<<<<< HEAD:ROS_GUI/code/application.py
-from login_parse import is_authenticated, is_registered, register
-from exceptions import *
-
-=======
 from ROS_GUI.code.login_parse import is_authenticated, is_registered, register
 from ROS_GUI.code.exceptions import *
-from ROS_GUI.code.RosCmd import *
->>>>>>> a33da7dcb497d95c41f0bbb497f00bdeba770694:code/ROS_GUI/code/application.py
+
+from ROS_GUI.code.login_parse import is_authenticated, is_registered, register
+from ROS_GUI.code.exceptions import *
+from ROS_GUI.code.roscmd import *
 
 class Application(tk.Tk):
     def __init__(self):
@@ -145,23 +142,16 @@ class PageControl(tk.Frame):
         super().__init__(master)
         page_label = tk.Label(self, text="移动控制")
         page_label.place(x=170, y=0)
-
-<<<<<<< HEAD:ROS_GUI/code/application.py
         button1 = tk.Button(self, text="注销", command=lambda: master.show_frame(PageLogin)).grid(row=0, column=7)
-
-			
         button2 = tk.Button(self, text="地图建立", command=lambda: master.show_frame(PageMapCreate)).grid(row=5, column=3)
-=======
         button_cancel = tk.Button(self, text="返回主页", command=lambda: master.show_frame(PageHome)).place(x=0, y=0)
         button_forward = tk.Button(self, text="前").place(x=190, y=40)
         button_back =  tk.Button(self, text="后").place(x=190, y=90)
         button_left = tk.Button(self, text="左").place(x=165, y=65)
         button_right = tk.Button(self, text="右").place(x=215, y=65)
         button_stop= tk.Button(self, text="停").place(x=190, y=65)
->>>>>>> a33da7dcb497d95c41f0bbb497f00bdeba770694:code/ROS_GUI/code/application.py
+        button3 = tk.Button(self, text="注销", command=lambda: master.show_frame(PageLogin)).grid(row=0, column=7)
 
-	
-		button3 = tk.Button(self, text="注销", command=lambda: master.show_frame(PageLogin)).grid(row=0, column=7)
 
 class PageMapCreate(tk.Frame):
     def __init__(self, master):
