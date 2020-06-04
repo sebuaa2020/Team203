@@ -1,0 +1,8 @@
+prefix=/home/watsonyang/Team203_1/code/devel
+
+Name: map
+Description: Description of map
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
