@@ -1,5 +1,5 @@
-import numpy as np
-from code.exceptions import *
+
+from ROS_GUI.code.exceptions import *
 
 parsed = False
 brochure = dict()

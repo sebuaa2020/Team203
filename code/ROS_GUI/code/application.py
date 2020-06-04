@@ -1,8 +1,8 @@
 import tkinter as tk
 import tkinter.messagebox
-from code.login_parse import is_authenticated, is_registered, register
-from code.exceptions import *
-
+from ROS_GUI.code.login_parse import is_authenticated, is_registered, register
+from ROS_GUI.code.exceptions import *
+from ROS_GUI.code.RosCmd import *
 
 class Application(tk.Tk):
     def __init__(self):
@@ -13,7 +13,7 @@ class Application(tk.Tk):
         self.screeh_height = self.winfo_screenheight()  # 屏幕高度
         self.frames = {}
 
-        for F in (PageLogin, PageMapCreate, PageHome):
+        for F in (PageLogin, PageHome, PageMapCreate, PageVoiceControl, PagePathPlanning, PageControl):
             frame = F(self)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky='nsew')
@@ -25,8 +25,8 @@ class Application(tk.Tk):
         frame = self.frames[page_name]
         frame.tkraise()
 
-        # 将窗口居中，登录页面是406x420, 其他页面是800x800
-        window_width, window_height = 800, 800
+        # 将窗口居中，登录页面是406x420, 其他页面是400x400
+        window_width, window_height = 400, 400
         if page_name == PageLogin:
             window_width, window_height = 406, 420
 
@@ -124,16 +124,55 @@ class PageHome(tk.Frame):
     def __init__(self, master):
         super().__init__(master)
         page_label = tk.Label(self, text="主页")
-        page_label.grid(row=0, column=3)
+        page_label.place(x=180, y=0)
 
-        button1 = tk.Button(self, text="注销", command=lambda: master.show_frame(PageLogin)).grid(row=0, column=7)
-        button2 = tk.Button(self, text="地图建立", command=lambda: master.show_frame(PageMapCreate)).grid(row=5, column=3)
+        button_cancel = tk.Button(self, text="注销", command=lambda: master.show_frame(PageLogin)).grid(row=0, column= 0)
+        button_control = tk.Button(self, text="移动控制", command=lambda: master.show_frame(PageControl)).place(x=170, y=30)
+        button_map = tk.Button(self, text="地图建立", command=lambda: master.show_frame(PageMapCreate)).place(x=170, y=60)
+        button_path = tk.Button(self, text="路径规划", command=lambda: master.show_frame(PagePathPlanning)).place(x=170, y=90)
+        button_voice = tk.Button(self, text="语音播报", command=lambda: master.show_frame(PageVoiceControl)).place(x=170, y=120)
+
+
+class PageControl(tk.Frame):
+    def __init__(self, master):
+        super().__init__(master)
+        page_label = tk.Label(self, text="移动控制")
+        page_label.place(x=170, y=0)
+
+        button_cancel = tk.Button(self, text="返回主页", command=lambda: master.show_frame(PageHome)).place(x=0, y=0)
+        button_forward = tk.Button(self, text="前").place(x=190, y=40)
+        button_back =  tk.Button(self, text="后").place(x=190, y=90)
+        button_left = tk.Button(self, text="左").place(x=165, y=65)
+        button_right = tk.Button(self, text="右").place(x=215, y=65)
+        button_stop= tk.Button(self, text="停").place(x=190, y=65)
 
 
 class PageMapCreate(tk.Frame):
     def __init__(self, master):
         super().__init__(master)
         page_label = tk.Label(self, text="地图建立")
-        page_label.place(x=380, y=0)
+        page_label.place(x=170, y=0)
 
-        button1 = tk.Button(self, text="返回主页", command=lambda: master.show_frame(PageHome)).place(x=20, y=0)
+        button_cancel = tk.Button(self, text="返回主页", command=lambda: master.show_frame(PageHome)).place(x=0, y=0)
+        button_createMap= tk.Button(self, text="建图",command=RosBuildMap).place(x=180, y=50)
+        button_control = tk.Button(self, text="移动控制", command=lambda: master.show_frame(PageControl)).place(x=170, y=80)
+        button_saveMap = tk.Button(self,text="保存地图",command=RosSaveMap).place(x=180,y=110)
+
+class PagePathPlanning(tk.Frame):
+    def __init__(self, master):
+        super().__init__(master)
+        page_label = tk.Label(self, text="路径规划")
+        page_label.place(x=170, y=0)
+
+        button_cancel = tk.Button(self, text="返回主页", command=lambda: master.show_frame(PageHome)).place(x=0, y=0)
+        button_start = tk.Button(self, text="Start").place(x=180, y=50)
+
+
+class PageVoiceControl(tk.Frame):
+    def __init__(self, master):
+        super().__init__(master)
+        page_label = tk.Label(self, text="语音播报")
+        page_label.place(x=170, y=0)
+
+        button1 = tk.Button(self, text="返回主页", command=lambda: master.show_frame(PageHome)).place(x=0, y=0)
+        button_start = tk.Button(self, text="Start").place(x=180, y=50)
