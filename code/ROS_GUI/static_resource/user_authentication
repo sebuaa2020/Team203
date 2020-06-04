@@ -1,0 +1,12 @@
+u:user01
+p:123
+u:jack
+p:dd
+u:xx
+p:s
+<<<<<<< HEAD:ROS_GUI/static_resource/user_authentication
+
+=======
+u:d
+p:d
+>>>>>>> a33da7dcb497d95c41f0bbb497f00bdeba770694:code/ROS_GUI/static_resource/user_authentication
