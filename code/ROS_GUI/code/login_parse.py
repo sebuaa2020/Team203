@@ -3,7 +3,7 @@ from ROS_GUI.code.exceptions import *
 
 parsed = False
 brochure = dict()
-path_route = '../static_resource/user_authentication'
+path_route = 'ROS_GUI/static_resource/user_authentication'
 
 
 def is_parsed():

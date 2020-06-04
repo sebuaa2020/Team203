@@ -42,7 +42,7 @@ class PageLogin(tk.Frame):
         page_label.grid(row=0, column=1)
 
         # 图片显示
-        image_file = tk.PhotoImage(file='../static_resource/login.gif')
+        image_file = tk.PhotoImage(file='ROS_GUI/static_resource/login.gif')
         image_label = tk.Label(self, image=image_file)
         image_label.image = image_file
         image_label.grid(row=1, columnspan=3)
@@ -156,7 +156,7 @@ class PageMapCreate(tk.Frame):
         button_cancel = tk.Button(self, text="返回主页", command=lambda: master.show_frame(PageHome)).place(x=0, y=0)
         button_createMap= tk.Button(self, text="建图",command=RosBuildMap).place(x=180, y=50)
         button_control = tk.Button(self, text="移动控制", command=lambda: master.show_frame(PageControl)).place(x=170, y=80)
-        button_saveMap = tk.Button(self,text="保存地图",command=RosSaveMap).place(x=180,y=110)
+        button_saveMap = tk.Button(self,text="保存地图",command=RosSaveMap).place(x=170,y=110)
 
 class PagePathPlanning(tk.Frame):
     def __init__(self, master):
